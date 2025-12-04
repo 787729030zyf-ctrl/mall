@@ -1,0 +1,7 @@
+{
+  "name": "Copy of TaoAI - Smart Ecommerce",
+  "description": "A responsive Taobao-style ecommerce application featuring an AI Try-on experience, multi-language support, and a robust product catalog.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
