@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Globe, Home, Camera } from 'lucide-react';
+import { ShoppingCart, User, Globe, Home, Camera, Sparkles } from 'lucide-react';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const { t, toggleLang, lang } = useLanguage();
@@ -62,14 +63,14 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <Home className="w-6 h-6" />
           <span className="text-xs mt-1">{t.home}</span>
         </Link>
+        <Link to="/recommendation" className={`flex flex-col items-center p-2 ${isActive('/recommendation') ? 'text-taobao-primary' : 'text-gray-500'}`}>
+          <Sparkles className="w-6 h-6" />
+          <span className="text-xs mt-1">{t.makeupRec}</span>
+        </Link>
         <Link to="/try-on" className={`flex flex-col items-center p-2 ${isActive('/try-on') ? 'text-taobao-primary' : 'text-gray-500'}`}>
           <Camera className="w-6 h-6" />
           <span className="text-xs mt-1">{t.aiTryOn}</span>
         </Link>
-        <div className="flex flex-col items-center p-2 text-gray-500">
-          <ShoppingCart className="w-6 h-6" />
-          <span className="text-xs mt-1">Cart</span>
-        </div>
         <div className="flex flex-col items-center p-2 text-gray-500">
           <User className="w-6 h-6" />
           <span className="text-xs mt-1">Me</span>

@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PRODUCTS } from '../constants';
 import { Link } from 'react-router-dom';
-import { Search, Filter, Sparkles } from 'lucide-react';
+import { Search, Filter, Sparkles, ScanFace } from 'lucide-react';
 
 const Shop = () => {
   const { t } = useLanguage();
@@ -29,20 +30,38 @@ const Shop = () => {
         </button>
       </div>
 
-      {/* AI Banner */}
-      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg text-white p-6 flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-bold flex items-center">
-            <Sparkles className="mr-2" />
-            {t.tryOnTitle}
-          </h2>
-          <p className="mt-1 opacity-90 text-sm">{t.tryOnDesc}</p>
-          <Link to="/try-on" className="mt-4 inline-block bg-white text-purple-600 px-4 py-2 rounded-lg font-bold text-sm shadow hover:bg-gray-100 transition">
-            Go to {t.aiTryOn} &rarr;
-          </Link>
+      {/* Hero Banners Scroll */}
+      <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 snap-x">
+        {/* AI Try On Banner */}
+        <div className="snap-center shrink-0 w-[90%] md:w-[48%] relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 shadow-lg text-white p-6 flex justify-between items-center">
+          <div>
+            <h2 className="text-xl font-bold flex items-center">
+              <Sparkles className="mr-2 w-5 h-5" />
+              {t.tryOnTitle}
+            </h2>
+            <p className="mt-1 opacity-90 text-xs">{t.tryOnDesc}</p>
+            <Link to="/try-on" className="mt-3 inline-block bg-white/20 backdrop-blur-sm border border-white/50 text-white px-4 py-1.5 rounded-full font-bold text-xs hover:bg-white hover:text-purple-600 transition">
+              Try Now
+            </Link>
+          </div>
+          <div className="text-6xl opacity-20 transform rotate-12">
+            AI
+          </div>
         </div>
-        <div className="hidden md:block text-8xl opacity-20 transform rotate-12">
-          AI
+
+        {/* Makeup Rec Banner */}
+        <div className="snap-center shrink-0 w-[90%] md:w-[48%] relative overflow-hidden rounded-2xl bg-gradient-to-r from-pink-500 to-orange-400 shadow-lg text-white p-6 flex justify-between items-center">
+          <div className="relative z-10">
+            <h2 className="text-xl font-bold flex items-center">
+              <ScanFace className="mr-2 w-5 h-5" />
+              {t.beautyConsultant}
+            </h2>
+            <p className="mt-1 opacity-90 text-xs">{t.consultantDesc}</p>
+            <Link to="/recommendation" className="mt-3 inline-block bg-white text-orange-500 px-4 py-1.5 rounded-full font-bold text-xs hover:bg-orange-50 transition shadow-sm">
+              Start Analysis
+            </Link>
+          </div>
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-white/10 skew-x-12 transform translate-x-8"></div>
         </div>
       </div>
 
@@ -61,7 +80,7 @@ const Shop = () => {
               onClick={() => setFilter(cat)}
               className={`px-4 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors ${
                 filter === cat 
-                  ? 'bg-taobao-primary text-white font-medium' 
+                  ? 'bg-taobao-primary text-white font-medium shadow-md shadow-orange-200' 
                   : 'bg-white text-gray-600 border border-gray-200'
               }`}
             >

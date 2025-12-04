@@ -1,3 +1,4 @@
+
 import { Product, Translation, Lang } from './types';
 
 export const PRODUCTS: Product[] = [
@@ -63,6 +64,66 @@ export const PRODUCTS: Product[] = [
     category: "Home",
     shopName: "Home Deco",
     tags: ["Fragile"]
+  },
+  {
+    id: 7,
+    title: "Precision Micro-Tip Eyebrow Pencil - Dark Brown",
+    price: 49,
+    sales: 3200,
+    image: "https://picsum.photos/400/400?random=7",
+    category: "Beauty",
+    shopName: "Beauty Queen",
+    tags: ["Must Have"]
+  },
+  {
+    id: 8,
+    title: "Sculpt & Glow Contour Stick - Dual Ends",
+    price: 89,
+    sales: 1500,
+    image: "https://picsum.photos/400/400?random=8",
+    category: "Beauty",
+    shopName: "Glow Up",
+    tags: []
+  },
+  {
+    id: 9,
+    title: "Volumizing Lip Plumper Gloss",
+    price: 69,
+    sales: 800,
+    image: "https://picsum.photos/400/400?random=9",
+    category: "Beauty",
+    shopName: "Beauty Queen",
+    tags: []
+  },
+  {
+    id: 10,
+    title: "Radiant Creamy Concealer - Full Coverage",
+    price: 110,
+    sales: 2300,
+    image: "https://picsum.photos/400/400?random=10",
+    category: "Beauty",
+    shopName: "Glow Up",
+    tags: ["Top Rated"]
+  },
+  {
+    id: 11,
+    title: "Waterproof Liquid Eyeliner Pen - Jet Black",
+    price: 55,
+    sales: 4100,
+    image: "https://picsum.photos/400/400?random=11",
+    category: "Beauty",
+    shopName: "Eye Candy",
+    tags: []
+  },
+  {
+    id: 12,
+    title: "Hydrating Setting Spray - Long Lasting",
+    price: 95,
+    sales: 1200,
+    image: "https://picsum.photos/400/400?random=12",
+    category: "Beauty",
+    shopName: "Beauty Queen",
+    tags: []
   }
 ];
 
@@ -75,6 +136,7 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
     signIn: "立即登录",
     home: "首页",
     aiTryOn: "AI 试妆",
+    makeupRec: "妆容推荐",
     searchPlaceholder: "搜索宝贝...",
     recommeded: "猜你喜欢",
     sales: "销量",
@@ -97,7 +159,21 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
     noAccount: "还没有账号？",
     signUp: "立即注册",
     forgotPassword: "忘记密码？",
-    otherLogin: "其他方式登录"
+    otherLogin: "其他方式登录",
+    selectFeatures: "定制你的专属妆容",
+    eyebrowShape: "眉形选择",
+    lipShape: "唇形选择",
+    noseShape: "鼻形选择",
+    recommendedForYou: "为你定制的推荐",
+    matchScore: "匹配度",
+    analyze: "智能分析",
+    analyzing: "正在分析面部特征...",
+    yourProfile: "你的面部特征档案",
+    basedOnProfile: "根据你的面部特征，我们为你精选了以下产品",
+    beautyConsultant: "AI 美妆顾问",
+    consultantDesc: "选择你的面部特征，获取专业美妆建议",
+    startAnalysis: "开始分析",
+    reanalyze: "重新分析"
   },
   en: {
     login: "User Login",
@@ -107,6 +183,7 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
     signIn: "Sign In",
     home: "Home",
     aiTryOn: "AI Try-on",
+    makeupRec: "Beauty Recs",
     searchPlaceholder: "Search products...",
     recommeded: "Recommended",
     sales: "Sales",
@@ -129,7 +206,21 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
     noAccount: "No account yet?",
     signUp: "Sign Up",
     forgotPassword: "Forgot password?",
-    otherLogin: "Or login with"
+    otherLogin: "Or login with",
+    selectFeatures: "Customize Your Look",
+    eyebrowShape: "Eyebrow Shape",
+    lipShape: "Lip Shape",
+    noseShape: "Nose Shape",
+    recommendedForYou: "Recommended For You",
+    matchScore: "Match",
+    analyze: "Analyze",
+    analyzing: "Analyzing facial features...",
+    yourProfile: "Your Face Profile",
+    basedOnProfile: "Based on your features, we selected these items",
+    beautyConsultant: "AI Beauty Consultant",
+    consultantDesc: "Select your features to get professional advice",
+    startAnalysis: "Start Analysis",
+    reanalyze: "Start Over"
   }
 };
 
@@ -139,3 +230,21 @@ export const AI_STYLES = [
   { id: 'vintage', name: 'Vintage / 复古红唇', color: 'bg-red-100' },
   { id: 'summer', name: 'Summer / 夏日橘气', color: 'bg-yellow-100' }
 ];
+
+export const SHAPE_OPTIONS = {
+  eyebrow: [
+    { id: 'standard', name: { zh: '标准眉', en: 'Standard' }, icon: '😐' },
+    { id: 'arched', name: { zh: '欧式挑眉', en: 'Arched' }, icon: '🤨' },
+    { id: 'straight', name: { zh: '韩式平眉', en: 'Straight' }, icon: '😑' },
+  ],
+  lip: [
+    { id: 'standard', name: { zh: '标准唇', en: 'Standard' }, icon: '👄' },
+    { id: 'thin', name: { zh: '薄唇', en: 'Thin Lips' }, icon: '💋' },
+    { id: 'full', name: { zh: '厚唇', en: 'Full Lips' }, icon: '😽' },
+  ],
+  nose: [
+    { id: 'standard', name: { zh: '标准鼻', en: 'Standard' }, icon: '👃' },
+    { id: 'wide', name: { zh: '宽鼻翼', en: 'Wide Nose' }, icon: '🗿' },
+    { id: 'flat', name: { zh: '塌鼻梁', en: 'Flat Bridge' }, icon: '👶' },
+  ]
+};

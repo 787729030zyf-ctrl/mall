@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
@@ -7,6 +8,7 @@ import Login from './pages/Login';
 import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
 import AITryOn from './pages/AITryOn';
+import MakeupRecommendation from './pages/MakeupRecommendation';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -41,6 +43,14 @@ const AppContent = () => {
           <ProtectedRoute>
             <Layout>
               <AITryOn />
+            </Layout>
+          </ProtectedRoute>
+        } />
+
+        <Route path="/recommendation" element={
+          <ProtectedRoute>
+            <Layout>
+              <MakeupRecommendation />
             </Layout>
           </ProtectedRoute>
         } />

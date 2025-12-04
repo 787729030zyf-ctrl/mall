@@ -1,3 +1,4 @@
+
 export interface Product {
   id: number;
   title: string;
@@ -25,6 +26,7 @@ export interface Translation {
   signIn: string;
   home: string;
   aiTryOn: string;
+  makeupRec: string;
   searchPlaceholder: string;
   recommeded: string;
   sales: string;
@@ -48,4 +50,18 @@ export interface Translation {
   signUp: string;
   forgotPassword: string;
   otherLogin: string;
+  selectFeatures: string;
+  eyebrowShape: string;
+  lipShape: string;
+  noseShape: string;
+  recommendedForYou: string;
+  matchScore: string;
+  analyze: string;
+  analyzing: string;
+  yourProfile: string;
+  basedOnProfile: string;
+  beautyConsultant: string;
+  consultantDesc: string;
+  startAnalysis: string;
+  reanalyze: string;
 }
